@@ -28,6 +28,7 @@ public class JavaPracticeTemp {
         }
     }
 }
+
 //OSI layer when you open up a website
 //Write a program the reads IPv4 addresses from standard input and stores them in memory. If an octet contains a wildcard then the program should return all stored addresses that match. 
 // scheduling, thread, process, MMU, synchronization mechanism <program can be asked>,Deadlock etc.
