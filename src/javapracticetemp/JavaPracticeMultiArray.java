@@ -8,7 +8,7 @@ package javapracticetemp;
  *
  * @author ilyas
  */
-public class JavaPracticeTemp {
+public class JavaPracticeMultiArray {
     /**
      * @param args the command line arguments
      */

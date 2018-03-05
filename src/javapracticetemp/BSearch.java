@@ -17,6 +17,7 @@ public class BSearch {
         int resultIndexOfOurNumber =  binarySearch(array1, checkNo);
         System.out.println("Hello: " + resultIndexOfOurNumber );
     }
+    //iterative solution
     // 0( log (n) )
     //returns index of checkNo if present in array1[]
     //else returns -1
