@@ -22,9 +22,7 @@ public class BSearch {
     //returns index of checkNo if present in array1[]
     //else returns -1
     public static int binarySearch(int[] localArray, int localNo){
-        
         int min = 0; int max = localArray.length -1; //index max, min
-        
         while(min <= max){ //whie min is still max, solves 'clash' problem
             int midGuess = min +  ( max - min / 2)  ;//find first midpoint average
             if (localArray[midGuess] == localNo){ //if you hit target, return target
