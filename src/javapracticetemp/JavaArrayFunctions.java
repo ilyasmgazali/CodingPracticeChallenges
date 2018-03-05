@@ -11,9 +11,11 @@ package javapracticetemp;
  */
 public class JavaArrayFunctions {
     public static void main (String args[]){
-        
+        //create array
+        int array1[][] = new int[5][2];
+        int array2[] = {1,2,3,4};
     }
-    public static void addArray(){
-        
-    }
+    
 }
+
+
