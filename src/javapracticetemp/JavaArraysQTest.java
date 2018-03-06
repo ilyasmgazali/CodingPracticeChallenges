@@ -13,13 +13,18 @@ public class JavaArraysQTest {
     public static void main (String args[]){
         //System.out.println( linearSearchWhichPosition( createArray(), 3 ) );
         //rotateKPosition( createArray(), 0 );
-        System.out.println(":  " + binarSearch(createArray(),4));
-        
+        //System.out.println(":  " + binarSearch(createArray(),4));
+        maxSumArray(createArray2());
     }
     //CREATE ARRAY
     public static int[] createArray(){
         int[] thisArray = {1,2,3,4,5}; //10?
         return thisArray;
+    }
+    //CREATE ARRAY2
+    public static int[] createArray2(){
+        int[] array1 = {0,-1,5,5,5,0,-50,20,0,0,0,-20,10,10,10,10,10,10};
+        return array1;
     }
     //PRINT ARRAY
     public static void printArray(int[] thisArray){
@@ -100,5 +105,21 @@ public class JavaArraysQTest {
         }
         return -1;
     }
-    //-----------------TRY AGAIN---------------------       
+
+    
+    // MAX SUB ARRAY (KADANES ALGORITHM) Best explanation https://algorithms.tutorialhorizon.com/kadanes-algorithm-maximum-subarray-problem/
+    public static void maxSumArray(int[] thisArray){
+        //variables for current and max
+        int maxSum=0;int currentSum=0;
+        for(int i=0;i<thisArray.length;i++){
+            currentSum=currentSum+thisArray[i];//calculate current sum
+            if(currentSum<0){
+                currentSum=0;//disregard and reset to 0
+            }
+            if(currentSum>maxSum){
+                maxSum=currentSum;//update if a new max number is found
+            }
+        }
+        System.out.println("Max Sum: "+maxSum);
+    }
 }
