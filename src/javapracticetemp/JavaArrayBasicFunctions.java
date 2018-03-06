@@ -10,19 +10,24 @@ package javapracticetemp;
  */
 import java.util.Arrays;
 
-public class JavaArrayFunctions {
+public class JavaArrayBasicFunctions {
     public static void main (String args[]){
         //create array 
         int[] array1 = new int[5];
         int[] array2 = {1,2,3,4};
-        int[] array2half = {1,2,3,4};
         //create array multi
         int array3[][] = new int[2][5];
         int[][] arr4 = { {1,3,4,5}, {60,70,80} };
         
         //printMultDArray(arr4);
     }
-    /*  This method prints arrays   
+    /* CREATE TWO DIMENTIONAL ARRAY   
+    */
+    public static int[][] createTwoDimentionalArray(){
+        int[][] arr = { {1,3,4,5}, {60,70,80 } };
+        return arr;
+    }
+    /*  PRINT ARRAY 
     *
     */
     public static void printArray(int[] thisArray){
@@ -30,7 +35,7 @@ public class JavaArrayFunctions {
             System.out.println(":"+thisArray[i]);
         }
     }
-    /*  This method prints multi D arrays   
+    /*  PRINT MULTIDIMENTIONAL ARRAY   
     */
     public static void printMultDArray(int[][] multiD){
         //NOTE FOR MULTI dimentional array dont use length -1 !!!!!!!!!!!!!!!!!!!
@@ -40,7 +45,7 @@ public class JavaArrayFunctions {
             }
         }
     }
-    /*  compare two arrays
+    /*  COMPARE ARRAYS, SINGLE OR MULTIDIMENTIONAL
     */
     public static boolean compareArrays(int[][] multiD,int[][] multiD2){
         // CAN ALSO USE Arrays.Equals(x,x); FOR STANDARD ARRAYS
@@ -50,5 +55,7 @@ public class JavaArrayFunctions {
         }else{
             return false;
         }
+        //RETURN STATEMENT NOT REQUIRED SEE BELOW
+        //return Arrays.deepEquals(multiD,multiD2);
     }    
 }
