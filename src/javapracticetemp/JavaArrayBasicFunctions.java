@@ -37,11 +37,11 @@ public class JavaArrayBasicFunctions {
     */
     public static void printArray(int[] thisArray){
         
-        int kPosition = 4;
+        int kPosition = 5;
         
         for(int i=0;i<thisArray.length-1;i++){
             System.out.println(":"+thisArray[i]);
-            System.out.println("-------"+(kPosition%thisArray[i]));
+            System.out.println("-------"+(thisArray[i]%kPosition));
         }
     }
     /*  PRINT MULTIDIMENTIONAL ARRAY   
