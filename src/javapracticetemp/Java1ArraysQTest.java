@@ -9,7 +9,7 @@ package javapracticetemp;
  *
  * @author ilyas
  */
-public class JavaArraysQTest {
+public class Java1ArraysQTest {
     public static void main (String args[]){
         //System.out.println( linearSearchWhichPosition( createArray(), 3 ) );
         //rotateKPosition( createArray(), 0 );
@@ -85,7 +85,7 @@ public class JavaArraysQTest {
             right--;
         }   
     }           
-    //-----------------TRY AGAIN---------------------
+    //-----------------TRY AGAIN---------------------CORRECT BUT MORE KNOWLEDGE REQUIRE
     //BINARY SEARCH TREE
     public static int binarSearch(int[] thisArray, int targetNo){
         //min max index
@@ -122,4 +122,5 @@ public class JavaArraysQTest {
         }
         System.out.println("Max Sum: "+maxSum);
     }
+    
 }

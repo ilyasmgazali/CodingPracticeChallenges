@@ -9,7 +9,7 @@ package javapracticetemp;
  *
  * @author ilyas
  */
-public class JavaStrings {
+public class Java1Strings {
     public static void main (String args[]){
         //
         String myWords = "one two three";

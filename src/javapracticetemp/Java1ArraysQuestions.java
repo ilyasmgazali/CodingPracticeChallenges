@@ -8,7 +8,7 @@ package javapracticetemp;
  *
  * @author ilyas
  */
-public class JavaArraysQuestions {
+public class Java1ArraysQuestions {
     public static void main(String[] args) {
         //1 Sum in array
         int[] arr = new int[]{10,20,30,40,50};
