@@ -1,7 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * ARRAYS
+ * QUESTIONS ON ARRAYS
+ * QUESTIONS ON ARRAYS
  */
 package javapracticetemp;
 
@@ -12,7 +12,8 @@ package javapracticetemp;
 public class JavaArraysQTest {
     public static void main (String args[]){
         //System.out.println( linearSearchWhichPosition( createArray(), 3 ) );
-        rotateKPosition( createArray(), 0 );
+        //rotateKPosition( createArray(), 0 );
+        System.out.println(":  " + binarSearch(createArray(),4));
         
     }
     //CREATE ARRAY
@@ -79,4 +80,28 @@ public class JavaArraysQTest {
             right--;
         }   
     }           
+    
+    
+    //-----------------TRY AGAIN---------------------
+    //BINARY SEARCH TREE
+    public static int binarSearch(int[] thisArray, int targetNo){
+        //min max index
+        int min = 0;
+        int max = thisArray.length-1;
+        while(min<=max){
+            int guess = min + (max-min / 2);//average of numbers
+            if(thisArray[guess]==targetNo){
+                return guess;
+            }
+            if(thisArray[guess]<targetNo){
+                min=guess+1;
+            }else{
+            }{
+                max=guess-1;
+            }
+        }
+        return -1;
+    }
+    //-----------------TRY AGAIN---------------------
+        
 }
