@@ -22,7 +22,7 @@ public class JavaArraysQTest {
         return thisArray;
     }
     //PRINT ARRAY
-    public static void prinArray(int[] thisArray){
+    public static void printArray(int[] thisArray){
         for(int i=0;i<thisArray.length;i++){
             System.out.println(":"+thisArray[i]);
         }
@@ -63,7 +63,7 @@ public class JavaArraysQTest {
         //rotateAll
         rotate(thisArray, 0, thisArray.length-1); //take out this line if you just want to reverse it
         
-        prinArray(thisArray);
+        printArray(thisArray);
     }
     //ROTATE BY K POSITIONS - CONTINUED, second part
     public static void rotate(int[] thisArray,int left,int right){
