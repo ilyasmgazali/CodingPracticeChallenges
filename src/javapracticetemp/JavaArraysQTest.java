@@ -80,8 +80,6 @@ public class JavaArraysQTest {
             right--;
         }   
     }           
-    
-    
     //-----------------TRY AGAIN---------------------
     //BINARY SEARCH TREE
     public static int binarSearch(int[] thisArray, int targetNo){
@@ -102,6 +100,5 @@ public class JavaArraysQTest {
         }
         return -1;
     }
-    //-----------------TRY AGAIN---------------------
-        
+    //-----------------TRY AGAIN---------------------       
 }
