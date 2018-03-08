@@ -7,6 +7,10 @@
 //allows one null key
 package JavaCTCI;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
 /**
  *
  * @author ilyas
@@ -17,5 +21,30 @@ package JavaCTCI;
 
 
 public class CC1HashMap {
+    //
+    public static void main(String[] args) {
+        
+    }
+    public static HashMap createHashMap(){
+        HashMap<String, String> myMapPhonebook = new HashMap<>();
+        myMapPhonebook.put("A","1");
+        myMapPhonebook.put("b","2");
+        
+        Set<String> keys = myMapPhonebook.keySet();
+        
+        return myMapPhonebook;
+    }
+    //'Other way
+    public static void getAllValuesMapFunction(){
+        //
+    }
+    //'Other way
+    public static void getAllValuesArray(HashMap thisMap){
+        //
+        Set<String> keys = thisMap.keySet();
+        for(String i : keys){
+            System.out.println(i+" : " + thisMap.get(i)); //get using keys
+        }
+    }
     
-}
+}   
