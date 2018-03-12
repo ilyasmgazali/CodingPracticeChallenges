@@ -5,8 +5,12 @@
  */
 //it is not thred safe, unsynchronised //therefore faster as works with SINGLE THREAD
 //allows one null key, multiple null values
-//contins unique elements
+
 //it maintins no order
+
+// PERMITS SINGLE NULL KEY AND MULTIPLE NULL VALUES
+
+// CONTAINS UNIQUE KEYS BUT NOT UNIQUE VALUES, ie. IT CAN CONTAIN DUPLICATE VALUES
 package JavaCTCI;
 
 import java.util.HashMap;
