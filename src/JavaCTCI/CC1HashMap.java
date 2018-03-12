@@ -26,7 +26,7 @@ public class CC1HashMap {
         
     }
     public static HashMap createHashMap(){
-        HashMap<String, String> myMapPhonebook = new HashMap<>();
+        HashMap<String, String> myMapPhonebook = new HashMap<>(); //create hashmap
         myMapPhonebook.put("A","1");
         myMapPhonebook.put("b","2");
         
