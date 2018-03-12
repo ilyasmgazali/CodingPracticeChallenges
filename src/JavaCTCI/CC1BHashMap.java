@@ -21,8 +21,6 @@ import java.util.Set;
 //Map<type1, type2> mymap = new HashMap<>();
     //phonebook.put("ilyas", "07550363779");
     //........
-
-
 public class CC1BHashMap {
     //
     public static void main(String[] args) {
@@ -67,3 +65,16 @@ public class CC1BHashMap {
         } 
     }
 }   
+//hashmap methods
+//2 hashmap question
+
+//hashmap vs hashset differnces
+
+//hashset methods
+//2 hashset questions
+
+//-------------
+
+//array list properties 
+//array list vs array 
+//array list properties
