@@ -7,23 +7,23 @@ package JavaCTCI;
 
 // UNIQUE KEYS AND UNIQUE VALUES, i.e NO DUPLICATE VALUES
 
-import java.lang.reflect.Array;
+// IT CAN HAVE CAN HAVE SINGLE NULL KEY 
+
+// USE ADD() TO INSERT
+
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-
-// IT CAN HAVEE CAN HAVE SINGLE NULL KEY (NO NULL VALUES)
-
-//USE ADD() TO INSERT
-
 /**
- *
- * @author ilyas
+ *  GOOD SOURCE https://www.javatpoint.com/java-hashset 
+ * @author ilyas.
  */
+
 public class CC1CHashSET {
+   
     public static void main(String[] args){
         //
         printHashSet(   createHashSet()    );
@@ -35,19 +35,21 @@ public class CC1CHashSET {
         myHashSet.add("Aisha");
         myHashSet.add("Second");
         myHashSet.add("Third");
-        System.out.println();
+        System.out.println(myHashSet);
         return myHashSet;
     }
     // RET
     public static void printHashSet(HashSet mySet){
         Iterator ig = mySet.iterator();
         while(ig.hasNext()){
-            System.out.println("" + ig.next());
+            System.out.println("" + ig.next()); //next gives you next thing in array
         }
-        
-        //OR SIMPLY
-        System.out.println(mySet);
-        
+    }
+    // TRAVERSE FUNCTION - COMPARE EACH ELEMENT AND CHECK IF THEY EXIST
+    public static void traverse(HashSet mySet){
+        for(Object o:mySet){
+            System.out.println(mySet.contains(o));
+        }
     }
     // ARRAY --> LIST --> SET. THIS TYPE CONVERSION EVENTUALLY RESULTS IN A SET, THEREFORE IT BECOMES UNIQUE
     public static void arryToListToSet(){
@@ -61,4 +63,26 @@ public class CC1CHashSET {
     }
 }
 
-//CRUD
+/**
+ *   METHODS    
+ *      create
+ *      
+ *      retrieve
+ *      boolean - contains(Object 0)
+ *      boolean - isEmpty() -
+ *      int - size() - get size     
+ * 
+ *      update 
+ *      boolean - remove(Object o) - it is used to remove the specified element
+ *      boolean - add(Object) - adds element to set, if it is already present true
+ *      //from higher up in framework 
+ *              boolean - addAll(Collection);
+ *              boolean - toArray();
+ * 
+ *      delete
+ *      void clear() - 
+ *      
+ *      other
+ *      Object - clone() - shallow copy (elements are not copied) used for comparison == and not set.equals(shallow)
+ *      Iterator - iterator() - e.g Iterator it = set1.iterator(); then use while loop.
+ */
