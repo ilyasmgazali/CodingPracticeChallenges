@@ -43,7 +43,7 @@ import java.util.Hashtable;
     
     //clear---------
     //clear() resets and empties hashtable, Object clone() returns a duplicate of the invoking object, 
-public class CC1HashTables {
+public class CC1AHashTables {
     //
     public static void main(String[] args){
         createHashTable();

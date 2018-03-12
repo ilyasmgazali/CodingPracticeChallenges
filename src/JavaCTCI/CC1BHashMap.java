@@ -23,7 +23,7 @@ import java.util.Set;
     //........
 
 
-public class CC1HashMap {
+public class CC1BHashMap {
     //
     public static void main(String[] args) {
         HashMap<Integer, String> thisHash = createHashMap();
