@@ -16,14 +16,12 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-
 /**
  *  GOOD SOURCE https://www.javatpoint.com/java-hashset 
  * @author ilyas.
  */
 
 public class CC1CHashSET {
-   
     public static void main(String[] args){
         //
         printHashSet(   createHashSet()    );
@@ -38,7 +36,7 @@ public class CC1CHashSET {
         System.out.println(myHashSet);
         return myHashSet;
     }
-    // RET
+    // RETRIEVE - ITERATOR
     public static void printHashSet(HashSet mySet){
         Iterator ig = mySet.iterator();
         while(ig.hasNext()){
