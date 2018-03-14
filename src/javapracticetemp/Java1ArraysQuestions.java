@@ -17,6 +17,12 @@ public class Java1ArraysQuestions {
          int times=3;rotateArraybyKPosition(arr,times);
         //4 int times=3;reverseArray(arr,times);
     }
+    public static void printArray(int[] myArray){
+        for (int i = 0; i < myArray.length; i++) {
+            System.out.println(""+ myArray[i] );
+        }
+    }
+    
     //1 Sum in array
     public static int arraySum(int[] arr, int size){
         int sum =0;
@@ -47,17 +53,15 @@ public class Java1ArraysQuestions {
         }
     }
     // 4 Reverse Array
-    public static void reverseArray(int[] from, int kPosition) {
+    public static void reverseArrayByKPosition(int[] from, int kPosition) {
         // put things into indent of new array
-        int[] too = new int[from.length]; //new array
+        int[] temp = new int[from.length]; //new array
         
-        for (int i=0,j=too.length; i<too.length;i++,j--){ //go through all elements in old array
-            too[(j-1)%from.length]=from[i]; //--------REVERSE-----------_
+        for (int i=0,j=temp.length; i<temp.length;i++,j--){ //go through all elements in old array
+            temp[   (j-1)%from.length  ] =    from[i]; //--------REVERSE-----------_
             //as above___ too[(j+kPosition)] // REVERSE WITH LEFT MOVEMENT
         }
-        for (int i=0; i<from.length;i++){ //go through all elements in old array
-            System.out.print(","+ too[i]);
-        }
+        printArray(temp);
     }
 }
 //binary search tree (standard and recursive
