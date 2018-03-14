@@ -55,7 +55,7 @@ public class CC1CHashSET {
         List<String> list1 = Arrays.asList(stringArray1); // convert into list
            
         //constructors
-        Set<String> set1 = new HashSet<String>(list1); // convert into hashset
+        Set<String> set1 = new HashSet<String>(list1); // convert into hashset, note look at constructor. this makes it UNIQUE
         //other contructors
         //Set<String> set1 = new HashSet<String>(100); this denotes size/capacity
     }

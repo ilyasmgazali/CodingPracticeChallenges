@@ -42,8 +42,8 @@ public class CC1DArrayList {
                            "    Index of 1: " + myArray.indexOf(1) +
                            "    Size of ArrayList: " + myArray.size() );
     }
-    // TRAVERSE - FOR LOOPS - WHILE LOOP - ITERATOR
-    public static void forLoop(ArrayList<Integer> myList){
+    // TRAVERSE - FOR LOOPS - WHILE LOOP - ITERATOR - NOTE*** ORDERED!!!!!
+    public static void traverseLoops(ArrayList<Integer> myList){
         // Normal for loop
         for(int i=0;i<myList.size();i++){
             //
@@ -77,9 +77,38 @@ public class CC1DArrayList {
     }
     // REVERSE ARRAYLIST CONTENT - BUILT IN METHOD
     public static void reverse(ArrayList<Integer> myList){
-        Collections.reverse(myList); // BUILT IN METHOD
-        for(Integer i : myList){
-            System.out.println(i);
-        }
+        Collections.reverse(myList); // BUILT IN METHOD, COLLECTIONS METHOD
     }
 }
+
+
+// insert in middle of arraylist
+
+/*
+*   Methods
+*       create
+            create
+            L   ist<type> myl = new ArrayList<type>();
+            constructor
+                ArrayList() - empty constructor
+                ArrayList(Collections<? extends E>c) - List of elements
+                ArrayList(int inicalCapacity)
+             convert
+                T<> T[] toArray(T[] a) - convert ArrayList to array
+        retrieve
+        
+        update
+            boolean add(E e) - add to end of list, give true if successful
+            void add(int index, E element) - insert object at end of element
+            boolean addAll(int index, Collection E) - add new collection at end of list
+            boolean addAll(int index, Collection E) - add new list into the old one at specified starting index
+        delete
+            void clear() - clear all
+
+        compare
+            boolean compare(Object o) - true if same 
+
+        other
+*           Object clone() - shallow instance of array for == comparison
+(
+*/
