@@ -45,7 +45,7 @@ public class CC1CHashSET {
     }
     // TRAVERSE FUNCTION - COMPARE EACH ELEMENT AND CHECK IF THEY EXIST
     public static void traverse(HashSet mySet){
-        for(Object o:mySet){
+        for(Object o: mySet ){
             System.out.println(mySet.contains(o));
         }
     }

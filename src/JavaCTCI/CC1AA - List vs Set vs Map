@@ -1,1 +1,29 @@
-http://www.java67.com/2013/01/difference-between-set-list-and-map-in-java.html
+Difference between SET, LIST, MAP in Java
+    - http://www.java67.com/2013/01/difference-between-set-list-and-map-in-java.html
+
+.
+
+x - ..
+
+//hashmap methods
+//hashmap CRUD
+//2 hashmap question
+
+
+//2 hashset questions
+
+//-------------
+
+// ArrayList methods ------------------------------
+//array list properties
+
+
+//AFTER
+
+//CRUD - ARRAYLIST - because it is ordered
+//CRUD - HASHMAP
+
+//REMEMBER - LIST_list, SET_unique, MAP_key-value store
+
+//  In future, array to string, splitting
+//

@@ -71,29 +71,3 @@ public class CC1BHashMap {
         } 
     }
 }   
-//hashmap methods
-//hashmap CRUD
-//2 hashmap question
-
-//hashmap vs hashset differnces
-
-//hashset methods
-//hashset CRUD
-//2 hashset questions
-
-//list vs arrray list
-
-//-------------
-
-//array list properties 
-//array list vs array 
-//array list properties
-
-
-//AFTER
-
-//CRUD - ARRAYLIST - because it is ordered
-//CRUD - HASHMAP
-//CRUD - HASHSET
-
-//REMEMBER - LIST_list, SET_unique, MAP_key-value store
