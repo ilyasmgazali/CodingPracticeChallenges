@@ -44,14 +44,22 @@ public class CC1BHashMap {
     public static Integer getValue(HashMap thisHash, Integer key){
         return (Integer)thisHash.get(key);
     }
+    
+    
     // GET ALL KEYS AND VALUE - 
-    public static void getAllValuesMapFunction(HashMap thisMap){
-        Set<  Entry<Integer, String>  > mySet = thisMap.entrySet();
+    /*
+    *   MAP.ENTRY is a key value combined in one class. This allows you to iterate over 
+    *   Map.entryset() instead of having to iterate over Map.keyset(), then find the value
+    */
+    public static void getAllValuesMapFunction(HashMap thisMap){ // --------------------------ENTRY
+        Set<  Entry<Integer, String>  > mySet = thisMap.entrySet(); //CREATE ENTRY SET Map.entryset()
         // for (TYPE variable: source)
         for(Entry<Integer, String> m : mySet ){
-            System.out.println("" +   m.getKey() + m.getValue()  );
+            System.out.println("" +   m.getKey() + m.getValue()  ); //GETKEY GETVALUE
         }
     }
+    
+    
     //'Other way - GET ALLL VALUES ONCE YOU HAVE KEYS
     // THIS CAN BE A PRINT METHOD
     public static void getAllValuesArray(HashMap thisMap){
