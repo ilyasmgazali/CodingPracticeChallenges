@@ -14,7 +14,7 @@ package javapracticetemp;
  *
  * @author ilyas
  */
-public class Java1ArraysQTest {
+public class Java1ArraysQuestionsNew {
     public static void main (String args[]){
         //System.out.println( linearSearchWhichPosition( createArray(), 3 ) );
         //rotateKPosition( createArray(), 0 );
