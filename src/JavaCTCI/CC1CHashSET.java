@@ -53,7 +53,7 @@ public class CC1CHashSET {
     public static void traverse(HashSet mySet){
        //For loop - basic
         for (int i = 0; i < mySet.size(); i++) {
-            System.out.println(" " + ); // does not have index//////
+            System.out.println(" " + mySet); // does not have index//////
         }
 
         //For loop - advanced
@@ -61,10 +61,10 @@ public class CC1CHashSET {
             System.out.println(mySet.contains(o));
         }
                 
-        //Iterator
-        Iterator it = mySet.iterator();
+        //Iterator - GOOD FOR REMOVING
+        Iterator it = mySet.iterator(); //one by one without square brackets
         while(it.hasNext()){
-            it.next();
+            System.out.println( ""+it.next() ); //print out one by one!
         }
     }
     // ARRAY --> LIST --> SET. THIS TYPE CONVERSION EVENTUALLY RESULTS IN A SET, THEREFORE IT BECOMES UNIQUE
@@ -84,22 +84,29 @@ public class CC1CHashSET {
  *      create
  *      
  *      retrieve
- *      boolean - contains(Object 0)
- *      boolean - isEmpty() -
- *      size
- *          int - size() - get size     
+ *          Contains    
+ *              boolean - contains(Object 0)
+ *          empty
+ *              boolean - isEmpty() -
+ *          
+ *          size
+ *              int size() - get size     
  * 
  *      update
- *      boolean - remove(Object o) - it is used to remove the specified element
- *      boolean - add(Object) - adds element to set, if it is already present true
+ *          remove    
+ *              boolean - remove(Object o) - it is used to remove the specified element
+ *          add
+ *              boolean - add(Object) - adds element to set, if it is already present true
  *      //from higher up in framework 
  *              boolean - addAll(Collection);
  *              boolean - toArray();
  * 
  *      delete
- *      void clear() - 
+ *          void clear() - 
  *      
  *      other
- *      Object - clone() - shallow copy (elements are not copied) used for comparison == and not set.equals(shallow)
- *      Iterator - iterator() - e.g Iterator it = set1.iterator(); then use while loop.
+ *      clone   
+ *          Object - clone() - shallow copy (elements are not copied) used for comparison == and not set.equals(shallow)
+ *      Iterator
+ *          Iterator - iterator() - e.g Iterator it = set1.iterator(); then use while loop.
  */
