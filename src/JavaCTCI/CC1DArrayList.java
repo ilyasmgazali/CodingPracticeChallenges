@@ -95,15 +95,42 @@ public class CC1DArrayList {
                 ArrayList(int inicalCapacity)
              convert
                 T<> T[] toArray(T[] a) - convert ArrayList to array
+             Convert To Array
+                Object[] toArray() - convert to array
+
         retrieve
-        
+            Object
+                E get(int index) - This method returns the element at the specified position in this list
+            index
+                int indexOf(Object o) - find index of object, returns -1 is not present
+            check
+                boolean isEmpty() - check if empty
+                int lastIndexOf(Object o) - index of last element --> similar to length-1. ALSO RETURNS -1 IF EMPTY
+            size
+                int size()
+
         update
             boolean add(E e) - add to end of list, give true if successful
             void add(int index, E element) - insert object at end of element
-            boolean addAll(int index, Collection E) - add new collection at end of list
+            boolean addAll(Collection E) - add new collection at end of list
             boolean addAll(int index, Collection E) - add new list into the old one at specified starting index
+            
+            void ensureCapacity(int minCapacity) - This increases the capacity of this ArrayList
+
+            Change 
+                E set(int index, E element) - replace element with at index with new element
+            Trim to size
+                void trimToSize() - trim to current array size
+
         delete
-            void clear() - clear all
+            Clear all
+                void clear() - clear all
+            At index
+                E remove(int index) - remove at index
+            At first instance
+                boolean remove(Object o) - remove first instance if presence, 
+            Range
+                protected void removeRange(int fromIndex, int toIndex) - remove from range of indexes
 
         compare
             boolean compare(Object o) - true if same 
