@@ -53,9 +53,11 @@ public class CC1CHashSET {
     public static void traverse(HashSet mySet){
        //For loop - basic
         for (int i = 0; i < mySet.size(); i++) {
-            System.out.println(" " + mySet); // does not have index//////
+            System.out.println(" " + mySet + " "  ); // does not have index//////
         }
-
+        
+        //Maybe need to use those below
+        
         //For loop - advanced
         for(Object o: mySet ){
             System.out.println(mySet.contains(o));
