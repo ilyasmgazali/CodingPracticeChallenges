@@ -15,11 +15,9 @@ import java.util.Iterator;
  */
 public class CC1DArrayList {
     public static void main (String[] args){
-        //
         printArray( createArrayList() );
         checkExistAndContains(  createArrayList(), 1, 2    );
         reverse(createArrayList());
-        
     }
     // CREATE
     public static ArrayList<Integer> createArrayList(){
@@ -32,15 +30,6 @@ public class CC1DArrayList {
     // PRINT
     public static void printArray(ArrayList<Integer> myArray){
         System.out.println(myArray);
-    }
-    // CHECK IF EXISTS - GET AT INDEX
-    public static void checkExistAndContains(ArrayList<Integer> myArray, int index, Integer checkIfExists){
-        //Check index +     //Check if exists 
-        System.out.println("Check Index: " + myArray.get(index) +
-                           "    Check if exists: " + myArray.contains(checkIfExists) +
-                           "    Check if empty: " + myArray.isEmpty() +
-                           "    Index of 1: " + myArray.indexOf(1) +
-                           "    Size of ArrayList: " + myArray.size() );
     }
     // TRAVERSE - FOR LOOPS - WHILE LOOP - ITERATOR - NOTE*** ORDERED!!!!!
     public static void traverseLoops(ArrayList<Integer> myList){
@@ -65,6 +54,15 @@ public class CC1DArrayList {
             System.out.println("Items" + it.next() );
         }
     }
+    // CHECK IF EXISTS - GET AT INDEX
+    public static void checkExistAndContains(ArrayList<Integer> myArray, int index, Integer checkIfExists){
+        //Check index +     //Check if exists 
+        System.out.println("Check Index: " + myArray.get(index) +
+                           "    Check if exists: " + myArray.contains(checkIfExists) +
+                           "    Check if empty: " + myArray.isEmpty() +
+                           "    Index of 1: " + myArray.indexOf(1) +
+                           "    Size of ArrayList: " + myArray.size() );
+    }
     // DELETE + FORLOOP
     public static ArrayList<Integer> delete(ArrayList<Integer> myArray, Integer toDelete ){
         for(int i=0; i<myArray.size();i++){
@@ -80,8 +78,6 @@ public class CC1DArrayList {
         Collections.reverse(myList); // BUILT IN METHOD, COLLECTIONS METHOD
     }
 }
-
-
 // insert in middle of arraylist
 
 /*

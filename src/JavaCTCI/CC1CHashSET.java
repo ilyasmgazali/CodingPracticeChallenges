@@ -24,29 +24,47 @@ import java.util.Set;
 public class CC1CHashSET {
     public static void main(String[] args){
         //
-        printHashSet(   createHashSet()    );
+        printHashSet(   createHashSet()   );
+        //traverse(   createHashSet() ); 
     }
     // CREATE
-    public static HashSet createHashSet(){
+    public static HashSet<String> createHashSet(){
         HashSet<String> myHashSet = new HashSet<String>(); 
         // OR Set<String> hsString = new HashSet<>(56); // you can also have fixed size        
         myHashSet.add("Aisha");
         myHashSet.add("Second");
         myHashSet.add("Third");
-        System.out.println(myHashSet);
+        //System.out.println(myHashSet);
         return myHashSet;
     }
-    // RETRIEVE - ITERATOR
+    // PRINT
     public static void printHashSet(HashSet mySet){
+        //Print method 1 no square brackets
         Iterator ig = mySet.iterator();
         while(ig.hasNext()){
             System.out.println("" + ig.next()); //next gives you next thing in array
+        
         }
+        
+        //Print method 2 - with square brackets
+        System.out.println(mySet);
     }
     // TRAVERSE FUNCTION - COMPARE EACH ELEMENT AND CHECK IF THEY EXIST
     public static void traverse(HashSet mySet){
+       //For loop - basic
+        for (int i = 0; i < mySet.size(); i++) {
+            System.out.println(" " + ); // does not have index//////
+        }
+
+        //For loop - advanced
         for(Object o: mySet ){
             System.out.println(mySet.contains(o));
+        }
+                
+        //Iterator
+        Iterator it = mySet.iterator();
+        while(it.hasNext()){
+            it.next();
         }
     }
     // ARRAY --> LIST --> SET. THIS TYPE CONVERSION EVENTUALLY RESULTS IN A SET, THEREFORE IT BECOMES UNIQUE
@@ -68,9 +86,10 @@ public class CC1CHashSET {
  *      retrieve
  *      boolean - contains(Object 0)
  *      boolean - isEmpty() -
- *      int - size() - get size     
+ *      size
+ *          int - size() - get size     
  * 
- *      update 
+ *      update
  *      boolean - remove(Object o) - it is used to remove the specified element
  *      boolean - add(Object) - adds element to set, if it is already present true
  *      //from higher up in framework 
