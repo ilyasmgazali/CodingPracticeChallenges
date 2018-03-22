@@ -14,7 +14,7 @@ package JavaCTCI;
 public class CC2bStrings {
     public static void main(String args[]){
         //
-        String s = "abc_a";
+        String s = "a b c e";
         char[] charArray = s.toCharArray();
         //printA( replace(charArray)  );
         //printS( reverseSwap(s)  );
@@ -32,8 +32,7 @@ public class CC2bStrings {
         O(n)
         https://www.geeksforgeeks.org/determine-string-unique-characters/
     */
-    public static void Unique1(String str){
-        //
+    public static boolean Unique1(String str){
         char[] cha = str.toCharArray();
         //off switch
         boolean[] listA = new boolean[256];
@@ -42,11 +41,13 @@ public class CC2bStrings {
             int acsii = (int)str.charAt(i);
             if(listA[acsii]){
                 System.out.println("Contains duplicate");
+                return true;
             }else{
                 listA[acsii]=true;
-                //true case
             }
-        }
+        } 
+        System.out.println("No duplicate");
+        return false;
     }
     /*
     *   Chapter 1 Question 1 - String - Unique characters
