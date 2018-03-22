@@ -14,10 +14,11 @@ package JavaCTCI;
 public class CC2bStrings {
     public static void main(String args[]){
         //
-        String s = "abc_";
+        String s = "abc_a";
         char[] charArray = s.toCharArray();
         //printA( replace(charArray)  );
-        printS( reverseSwap(s)  );
+        //printS( reverseSwap(s)  );
+        Unique1(s);
     }
     public static void printA(char[] thisArray){
         System.out.println(thisArray);
@@ -37,7 +38,7 @@ public class CC2bStrings {
         //off switch
         boolean[] listA = new boolean[256];
         
-        for(int i=0;i<listA.length;i++){
+        for(int i=0;i<cha.length;i++){
             int acsii = (int)str.charAt(i);
             if(listA[acsii]){
                 System.out.println("Contains duplicate");
