@@ -20,10 +20,10 @@ public class CC2bStrings {
         //printS( reverseSwap(s)  );
         Unique1(s);
     }
-    public static void printA(char[] thisArray){
+    public static void printCharArray(char[] thisArray){
         System.out.println(thisArray);
     }
-    public static void printS(String s){
+    public static void printString(String s){
         System.out.println(s);
     }
     /*
@@ -79,7 +79,6 @@ public class CC2bStrings {
     public static char[] replace(char[] thisArray){
         int spaceCount = 0;
         int size = thisArray.length; 
-        
         //calculate number of spaces
         for(int i=0;i<size;i++){
             if(thisArray[i]==' '){ // " " - String AND ' ' - char
@@ -88,10 +87,8 @@ public class CC2bStrings {
         }
         //calculate new size
         int newSize = size + (  spaceCount*2    ); //e.g above turns 5->9
-        
         //new char 
         char[] newArray = new char[newSize]; // new size becomes 9 
-        
         //find spaces, input
         for(int i=0,j=0;    i<size||j<newSize;  i++,j++  ){
             if(thisArray[i]==' '){
