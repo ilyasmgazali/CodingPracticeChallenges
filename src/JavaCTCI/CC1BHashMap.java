@@ -31,6 +31,8 @@ public class CC1BHashMap {
     //
     public static void main(String[] args) {
         HashMap<Integer, String> thisHash = createHashMap();
+        
+        printHashMap(   createHashMap()   );
     }
     // CREATE HASHMAP
     public static HashMap createHashMap(){
@@ -40,6 +42,10 @@ public class CC1BHashMap {
         
         return myMapPhonebook;
     }
+    public static void printHashMap(HashMap hMap){
+        System.out.println(""+ hMap);
+    }
+    
     // GET VALUE WITH KEY
     public static Integer getValue(HashMap thisHash, Integer key){
         return (Integer)thisHash.get(key);
@@ -54,11 +60,10 @@ public class CC1BHashMap {
     public static void getAllValuesMapFunction(HashMap thisMap){ // --------------------------ENTRY
         Set<  Entry<Integer, String>  > mySet = thisMap.entrySet(); //CREATE ENTRY SET Map.entryset()
         // for (TYPE variable: source)
-        for(Entry<Integer, String> m : mySet ){
+        for(Entry<Integer, String>  m : mySet ){
             System.out.println("" +   m.getKey() + m.getValue()  ); //GETKEY GETVALUE
         }
     }
-    
     
     //'Other way - GET ALLL VALUES ONCE YOU HAVE KEYS
     // THIS CAN BE A PRINT METHOD
@@ -70,6 +75,7 @@ public class CC1BHashMap {
             System.out.println(i+" : " + thisMap.get(i)); //get using keys
         }
     }
+    
     //CHECK IF DUBPLICATE EXISTS
     public static boolean checkDuplicateKeys(HashMap myHash, Integer myKey){
         if( myHash.containsKey(myKey) ){ //myHash.containsValue()
@@ -79,3 +85,17 @@ public class CC1BHashMap {
         } 
     }
 }   
+/*
+*   Methods
+*       Create
+
+        Retrieve
+
+        Update
+
+        Delete
+
+        Other
+
+        
+*/
