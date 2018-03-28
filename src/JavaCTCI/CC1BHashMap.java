@@ -60,7 +60,7 @@ public class CC1BHashMap {
     public static void getAllValuesMapFunction(HashMap thisMap){ // --------------------------ENTRY
         Set<  Entry<Integer, String>  > mySet = thisMap.entrySet(); //CREATE ENTRY SET Map.entryset()
         // for (TYPE variable: source)
-        for(Entry<Integer, String>  m : mySet ){
+        for(    Entry<Integer, String>  m : mySet ){
             System.out.println("" +   m.getKey() + m.getValue()  ); //GETKEY GETVALUE
         }
     }
