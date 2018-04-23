@@ -8,10 +8,7 @@ package javapracticetemp;
  *
  * @author ilyas DOCUMENTATION https://docs.oracle.com/javase/specs/jls/se7/html/jls-10.html
  */
-
-
 import java.util.Arrays;
-
 //--------REMEMBER in for loop LENGTH-1 is for when ...i<=array.length-1... NOT ...i=array.length... REMEMBER -1 IS FOR LESS THAN OR EQUALS TO ONLY
 public class Java1ArrayBasicFunctions {
     public static void main (String args[]){

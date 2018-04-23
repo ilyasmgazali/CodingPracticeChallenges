@@ -9,20 +9,25 @@ package JavaCTCI;
 
 /**
  *
- * @author ilyas
+ * @author ilyas - JavaPoint Documentation - https://www.javatpoint.com/java-string
  */
 public class CC2bStrings {
     public static void main(String args[]){
-        //
         String s = "a b c e";
         char[] charArray = s.toCharArray();
         //printA( replace(charArray)  );
         //printS( reverseSwap(s)  );
         Unique1(s);
     }
+    /**   
+     *  Print char array, no loop
+    */
     public static void printCharArray(char[] thisArray){
         System.out.println(thisArray);
     }
+    /**   
+     *  Print String
+    */
     public static void printString(String s){
         System.out.println(s);
     }
@@ -35,7 +40,7 @@ public class CC2bStrings {
     public static boolean Unique1(String str){
         char[] cha = str.toCharArray();
         //off switch
-        boolean[] listA = new boolean[256];
+        boolean[] listA = new boolean[256]; //this uses the boolean trick
         
         for(int i=0;i<cha.length;i++){
             int acsii = (int)str.charAt(i);
@@ -58,8 +63,7 @@ public class CC2bStrings {
     
     // ----------------------- FUTURE --------------------------------
     
-    /*
-    *   Chapter 1 Question 2 - String - Reverse A String
+    /**   Chapter 1 Question 2 - String - Reverse A String
         O(n)
     */
     public static String reverseSwap(String str){
@@ -104,3 +108,10 @@ public class CC2bStrings {
         return newArray;
     }
 }
+
+/**
+ *  METHODS
+ *      -   toCharArray() - converts this string into character array. returns newly created character array.
+ *      -   charAt() - returns a char value at the given index number. index number starts from 0. else an exception is given.
+ * 
+ */
