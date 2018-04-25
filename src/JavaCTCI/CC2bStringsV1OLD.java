@@ -11,7 +11,7 @@ package JavaCTCI;
  *
  * @author ilyas - JavaPoint Documentation - https://www.javatpoint.com/java-string
  */
-public class CC2bStrings {
+public class CC2bStringsV1OLD {
     public static void main(String args[]){
         String s = "a b c e";
         char[] charArray = s.toCharArray();
@@ -76,9 +76,9 @@ public class CC2bStrings {
         }
         return String.copyValueOf(thisArray);
     }
-    /*
-    *   Chapter 1 Question 4 - String - Replace String Spaces With '20%'
-        O??????
+    /**
+     * Chapter 1 Question 4 - String - Replace String Spaces With '20%'
+     *  O??????.
     */
     public static char[] replace(char[] thisArray){
         int spaceCount = 0;
