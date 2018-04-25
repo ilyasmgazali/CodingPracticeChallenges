@@ -13,11 +13,28 @@ public class CC2bStringsTESTmyself {
     /**
      */ 
     public static void main(String[] args){
-        //
-        String testString = "Helo"; System.out.println(    uniqueCheck(testString) );
+        // Q1
+        //String testString = "Helo"; System.out.println(    uniqueCheck(testString) );
+        // Q2
+        //String testString = "abcd"; System.out.println(  reverseString(testString)   );    
+    }
+    /**   
+     *  Print char array, no loop
+    */
+    public static void printCharArray(char[] thisArray){
+        System.out.println(thisArray);
+    }
+    /**   
+     *  Print String
+    */
+    public static void printString(String s){
+        System.out.println(s);
     }
     /**
-     *  Check if all strings are unique 
+     *  CTCI 1 - Check if all strings are unique - 
+     *  Big O is 0(n).
+     *  First answer
+     *  https://www.geeksforgeeks.org/determine-string-unique-characters/
      */
     public static boolean uniqueCheck(String methodString){
         //create array of boolean, set to false as default
@@ -27,6 +44,8 @@ public class CC2bStringsTESTmyself {
         //loop through char array
         for(int i=0; i<myCharArray.length;i++){
              //write code to turn them true, if already true, then you have duplicate
+             
+            //int ASCII = (int)myCharArray[i]; ////////////////////// MISSED THIS LINE BUT IT STILL WORKED
             if(check[   myCharArray[i]  ]==true){
                 //
                 return true;
@@ -35,5 +54,29 @@ public class CC2bStringsTESTmyself {
             }
         }
         return false;
+    }
+    /**
+     *  - CTCI Q2 - Reverse A String.
+     *  .
+     */
+    public static String reverseString(String methodString){
+        //create a char array
+        char[] myChar = methodString.toCharArray();
+        //temp value
+        char temp = 'a';
+        
+        //reverse array using simple reverse for loop
+        for(int i=0, j=myChar.length-1;     i<j;    i++,j--){
+            //swap method
+            temp = myChar[i]; //temp value
+            myChar[i] = myChar[j];
+            myChar[j] = temp;
+        }
+        //long way
+        String s = "";
+        s = s.copyValueOf(myChar);
+        return s;
+        //short way
+        // return String.copyValueof(myChar); https://www.tutorialspoint.com/java/java_string_copyvalueof.htm
     }
 }
