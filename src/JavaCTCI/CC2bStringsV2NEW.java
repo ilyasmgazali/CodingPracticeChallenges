@@ -139,10 +139,6 @@ public class CC2bStringsV2NEW {
         return String.copyValueOf(newChar);
         //O(n)+O(n)
     }
-    /**
-    *  - CTCI Q3 - Permutation
-    *  0?.
-    */
     
     // ----------------------- FUTURE --------------------------------
     //this question requires at least 2 hours
@@ -152,15 +148,13 @@ public class CC2bStringsV2NEW {
     *  0?.
     */
     public static boolean checkPerm(String str1, String str2){
-        //first  
-        System.out.println("Are you a burger lover? ");
-        
-        
+        //first
         return false;
-    }
-    
-    
-    
+    } 
+    /**
+    *  - CTCI Q3 - EXTENSTION - GEEKS FOR GEEKS - Permutation (PRINT ALL)
+    *  https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/.
+    */
     
     
 }

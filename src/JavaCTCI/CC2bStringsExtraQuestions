@@ -1,4 +1,6 @@
 Given a string, find its first non-repeating character
+    Look at the end of the link below for extra questions
+    This question below shows both O(n) solution and 
     https://www.geeksforgeeks.org/given-a-string-find-its-first-non-repeating-character/
+    
 
-.
