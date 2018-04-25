@@ -5,6 +5,8 @@
  */
 package JavaCTCI;
 
+//  https://www.javatpoint.com/java-string - DOCUMENTATION
+
 /**
  *
  * @author ilyas
@@ -18,7 +20,9 @@ public class CC2bStringsV2NEW {
         // Q2
         //String testString = "abcd"; System.out.println(  reverseString(testString)   );  
         // Q3
-        String testString = "A B C"; System.out.println( replace(testString)  );
+        //String testString = "A B C"; System.out.println( replace(testString)  );
+        //Q4 but should be 3
+        String a = "";String b="";System.out.println(": "+checkPerm(a,b));
     }
     /**   
      *  Print char array, no loop
@@ -147,6 +151,13 @@ public class CC2bStringsV2NEW {
     *  - CTCI Q3 - Permutation
     *  0?.
     */
+    public static boolean checkPerm(String str1, String str2){
+        //first  
+        System.out.println("Are you a burger lover? ");
+        
+        
+        return false;
+    }
     
     
     

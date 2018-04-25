@@ -5,6 +5,8 @@
  */
 package JavaCTCI;
 
+import java.util.Scanner;
+
 /**
  *
  * @author ilyas
@@ -15,4 +17,5 @@ package JavaCTCI;
 
 public class CC2cLinkedList {
     //To be started
+    
 }
