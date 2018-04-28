@@ -26,8 +26,8 @@ public class Java1Strings {
         for (int i = 0; i < myArray.length; i++) {
             System.out.println(" " + myArray[i] );
         }
+        //or just
+        //https://stackoverflow.com/questions/5283444/convert-array-of-strings-into-a-string-in-java?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
     }
-    
 }
-
 // NOTE: String methods e.g split

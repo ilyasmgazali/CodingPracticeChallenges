@@ -21,8 +21,15 @@ public class CC2bStringsV2NEW {
         //String testString = "abcd"; System.out.println(  reverseString(testString)   );  
         // Q3
         //String testString = "A B C"; System.out.println( replace(testString)  );
-        //Q4 but should be 3
-        String a = "";String b="";System.out.println(": "+checkPerm(a,b));
+        // Q3a 
+        //String a = "";String b="";System.out.println(": "+checkPerm(a,b));
+        // Q3b
+        //String a = "hello";String b = "helol"; System.out.println(": "+checkPerm2(a,b));
+        // Q4
+        //String testString = "A B C"; System.out.println( replace(testString)  );
+        // Q5
+        String testString = "aabbccdd"; System.out.println(compression(testString));
+        
     }
     /**   
      *  Print char array, no loop
@@ -103,6 +110,69 @@ public class CC2bStringsV2NEW {
     // ----------------------- FUTURE --------------------------------
     //Expand the above question to also have a recursive solution
     
+    // ----------------------- FUTURE --------------------------------
+    //this question requires at least 2 hours
+    
+    /**
+    *  - CTCI Q3 - Permutation
+    *  0?.
+    */
+    //--------FIRST SOLUTION--------- simple, readable, not difficult
+    public static boolean checkPerm(String str1, String str2){
+        //edge case
+        if(str1.length()!=str2.length()){
+            return false;
+        }
+        
+        return sort(str1).equals(sort(str2));
+    } 
+    public static String sort(String methodStr){
+        //sort out char 
+        char[] charToSort = methodStr.toCharArray();
+        java.util.Arrays.sort(charToSort);
+        return String.copyValueOf(charToSort);
+        //Note other way create new String
+        //return new String(charToSort);
+    }
+    //--------SECOND SOLUTION--------- 
+    public static boolean checkPerm2(String str1, String str2){
+        //THIS WAY CHECKS ASCII CHARACTER COUNTS
+        
+        //first edge case
+        if(str1.length()!=str2.length()){
+            return false;
+        }
+       
+        //create ascii counter
+        int[] asciiCounter = new int[256];
+        
+        //create and traverse through new char array, increasing counter
+        char[] firstChar = str1.toCharArray();
+        for(int i=0;i<firstChar.length;i++){
+            //
+            asciiCounter[  firstChar[i] ]++;
+        }
+        
+        //traverse string2, decrease counter for ascii char, if <0, true
+        for(int i=0;i<str2.length();i++   ){
+            //ascii str>char>int
+            int ascii = (int)str2.charAt(i);
+            
+            //decrement counter in array, if 0, then it did not exist previously
+            if(--asciiCounter[ascii] < 0){
+                System.out.println("check character:    "+asciiCounter[ascii]);
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //--------  EXTENSION ----------
+    /**
+    *  - CTCI Q3 - EXTENSTION - GEEKS FOR GEEKS - Permutation (PRINT ALL)
+    *  https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+    */
+    
     /**
      * Chapter 1 Question 4 - String - Replace String Spaces With '20%'
      *  O(n).
@@ -139,23 +209,34 @@ public class CC2bStringsV2NEW {
         return String.copyValueOf(newChar);
         //O(n)+O(n)
     }
-    
-    // ----------------------- FUTURE --------------------------------
-    //this question requires at least 2 hours
-    
     /**
-    *  - CTCI Q3 - Permutation
-    *  0?.
+     * Chapter 1 Question 5 - Basic String Compression e.g aaabbbaaa = a3b3a3
+     *  O(n2) - DUE TO STRING CONCATENATION .
     */
-    public static boolean checkPerm(String str1, String str2){
-        //first
-        return false;
-    } 
-    /**
-    *  - CTCI Q3 - EXTENSTION - GEEKS FOR GEEKS - Permutation (PRINT ALL)
-    *  https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/.
-    */
-    
+    // REMEMBER, if compressed can be larger than original
+    //--------------THIS SOLUTION DOES NOT WORK IN "LARGER" COMPRESSED CASE
+    public static String compression(String str1){
+        //first convert to char
+        char[] content = str1.toCharArray();
+        
+        String compressedString = "";
+        
+        //then create pointer to last character
+        char last = content[0];
+        int count = 1;
+        
+        for(int i=0;i<content.length;i++){
+            if (last==content[i]){
+                count++;
+            }else{
+                // ADD TO COMPRESSED CHAR HERE
+                compressedString = compressedString + last + count;
+                last=content[i];
+                count=1;
+            }
+        }
+        return compressedString;
+    }
     
 }
  /**
@@ -164,5 +245,5 @@ public class CC2bStringsV2NEW {
  *      -   charAt() - returns a char value at the given index number. index number starts from 0. else an exception is given.
  * 
  *  String
- *      - String.copyValueOf(newChar) - dynamically create new String and assign 
+ *      - String.copyValueOf(newChar) - dynamically create new String and assign .
  */

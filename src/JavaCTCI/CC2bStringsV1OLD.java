@@ -108,6 +108,7 @@ public class CC2bStringsV1OLD {
         }
         return newArray;
     }
+}
 /**
  *  METHODS
  *      -   toCharArray() - converts this string into character array. returns newly created character array.
