@@ -11,9 +11,10 @@ package javapracticetemp;
  */
 public class Java1Strings {
     public static void main (String args[]){
-        //
-        String myWords = "one two three";
-        reverseWords(myWords);
+        // 1
+        //String myWords = "one two three";reverseWords(myWords);
+        //2
+        String[] myWords = {"one", "two", "three"}; stringBuilderMethod(myWords);
     }
     public static String reverseWords(String wordInput){
         String[] wordArray = wordInput.split(""); //NOTE: CAN ALSO SPLIT BY SPACE
@@ -28,6 +29,18 @@ public class Java1Strings {
         }
         //or just
         //https://stackoverflow.com/questions/5283444/convert-array-of-strings-into-a-string-in-java?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+        String s = String.join(" ", myArray);
+        //or Stringbuilder
+        //or tostring? but does not seem to work that way
+    }
+    public static void stringBuilderMethod(String[] stringArray){
+        //method stringbuffer
+        StringBuffer sentence = new StringBuffer();
+        for(String w: stringArray){
+            sentence.append(w);
+            sentence.append(" ");
+        }
+        System.out.println("Result: " + sentence.toString()); //built in StringBuffer method
     }
 }
 // NOTE: String methods e.g split

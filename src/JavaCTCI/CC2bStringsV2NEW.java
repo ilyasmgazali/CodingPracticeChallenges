@@ -28,7 +28,9 @@ public class CC2bStringsV2NEW {
         // Q4
         //String testString = "A B C"; System.out.println( replace(testString)  );
         // Q5
-        String testString = "aabbccdd"; System.out.println(compression(testString));
+        //String testString = "aabbccdd"; System.out.println(compression(testString));
+        //Q5b
+        String testString2 = "aabbccAAAaaa"; System.out.println(compressionImproved(testString2));
         
     }
     /**   
@@ -214,22 +216,23 @@ public class CC2bStringsV2NEW {
      *  O(n2) - DUE TO STRING CONCATENATION .
     */
     // REMEMBER, if compressed can be larger than original
+    
     //--------------THIS SOLUTION DOES NOT WORK IN "LARGER" COMPRESSED CASE
     public static String compression(String str1){
         //first convert to char
         char[] content = str1.toCharArray();
         
-        String compressedString = "";
+        String compressedString = ""; //to append or 'concatenate'
         
         //then create pointer to last character
-        char last = content[0];
-        int count = 1;
+        char last = content[0];//to start of with
+        int count = 1;//default to one 
         
-        for(int i=0;i<content.length;i++){
-            if (last==content[i]){
+        for(int i=0;i<content.length;i++){//iterate through char
+            if (last==content[i]){//if it already exists, increment
                 count++;
             }else{
-                // ADD TO COMPRESSED CHAR HERE
+                // ADD TO COMPRESSED CHAR +COUNTER HERE, reset pointer 
                 compressedString = compressedString + last + count;
                 last=content[i];
                 count=1;
@@ -237,13 +240,53 @@ public class CC2bStringsV2NEW {
         }
         return compressedString;
     }
+    public static String compressionImproved(String str1){
+        //create an array of strings
+        String[] stringArray = str1.split("");
+        //create a stringbuffer to improve code
+        StringBuffer newSentence = new StringBuffer();
+        //create a counter starting at 0
+        int counter = 1;
+        //create a pointer make it on off only (possibly boolean)
+        String pointer = stringArray[0];
+        //when going through whole sequence, if new concat and print old
+        for(int i=1;i<stringArray.length;i++){
+            //
+            
+            if(pointer.equals(  stringArray[i]) ){//case where second is same as first
+                counter++;
+            }else{
+                newSentence.append(pointer);
+                newSentence.append(counter);
+                //reset counter, reset pointer
+                counter=1; 
+                pointer=stringArray[i]; 
+            }
+        }
+        //NOTE LAST SET IS NEVER RUN, THIS IS DUE THERE BEING NO 'NOT EQUALS CASE' AT END
+        //THEREFORE MUST DO IT MANUALLY
+        newSentence.append(pointer); //************
+        newSentence.append(counter); //***********
+        
+        return newSentence.toString();
+    }
+    
+    
+    
+    
+    
     
 }
  /**
  *  METHODS
  *      -   toCharArray() - converts this string into character array. returns newly created character array.
  *      -   charAt() - returns a char value at the given index number. index number starts from 0. else an exception is given.
+ *      -   split(","); returns array of type String 
  * 
  *  String
  *      - String.copyValueOf(newChar) - dynamically create new String and assign .
+ *      - String.split(",", myStringArray);
+ * 
+ * String[]
+ *      - split()
  */
