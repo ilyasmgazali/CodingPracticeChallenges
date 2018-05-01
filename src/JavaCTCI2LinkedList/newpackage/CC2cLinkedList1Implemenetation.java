@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JavaCTCI;
+package JavaCTCI2LinkedList.newpackage;
 
 import java.util.Scanner;
 
@@ -12,10 +12,8 @@ import java.util.Scanner;
  * @author ilyas
  */
 
-// https://www.geeksforgeeks.org/data-structures/linked-list/
-//------------------------------- GOOD SOURCE ------------------------------
 
-public class CC2cLinkedList {
+public class CC2cLinkedList1Implemenetation {
     //To be started
     
 }
