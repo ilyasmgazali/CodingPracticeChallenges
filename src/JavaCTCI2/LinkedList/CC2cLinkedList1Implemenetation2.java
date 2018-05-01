@@ -83,12 +83,29 @@ public class CC2cLinkedList1Implemenetation2 {
             current = current.next;
         }
     }
+    public static void insertAfer(Node previousNode, int data){
+        //case where given node is null
+        if(previousNode==null){
+            System.out.println("The given previous node is null");
+            return;
+        }
+        
+        //rest of cases
+        Node newNode = new Node(data);
+        //make next pointer of PREVIOUS node, as NEW NODE
+        newNode.next = previousNode.next;
+        //Then previousnode next must point to new node
+        previousNode.next = newNode;
+        
+        //NOTE ******** you do not have to traverse this as you already know the node
+    }
     /***
      *  MAIN METHOD
      */
     public static void main(String[] args){
         CC2cLinkedList1Implemenetation2 linkedList1 = new CC2cLinkedList1Implemenetation2();
-        int a =1;int b=2;int c=3; int d=4;int e=11;
-        linkedList1.append(a);linkedList1.append(b);linkedList1.append(c);linkedList1.append(d);linkedList1.prepend(11);linkedList1.deleteValue(b);linkedList1.print();
+        int a =1;int b=2;int c=3; int d=4;int e=11;int f= 5;
+        linkedList1.append(a);linkedList1.append(b);linkedList1.append(c);linkedList1.append(d);linkedList1.prepend(11);linkedList1.deleteValue(b);
+        linkedList1.insertAfer(linkedList1.head.next, f);linkedList1.print();
     }
 }
