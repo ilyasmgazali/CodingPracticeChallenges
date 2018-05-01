@@ -30,7 +30,7 @@ public class CC2bStringsV2NEW {
         // Q5
         //String testString = "aabbccdd"; System.out.println(compression(testString));
         //Q5b
-        String testString2 = "aabbccAAAaaa"; System.out.println(compressionImproved(testString2));
+        String testString2 = "aaaaabbzzzzzzzzzzzzzzzz"; System.out.println(compressionImproved(testString2));
         
     }
     /**   
@@ -270,6 +270,8 @@ public class CC2bStringsV2NEW {
         
         return newSentence.toString();
     }
+    // WITH METHOD ABOVE
+    //public static vo
     
     
     
