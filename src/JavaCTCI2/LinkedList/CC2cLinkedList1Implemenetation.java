@@ -33,7 +33,6 @@ public class CC2cLinkedList1Implemenetation {//THIS CLASS SHOULD BE CALLED Linke
             System.out.println( current.data + "-->"  );
             current = current.next;
         }
-        System.out.println( current.data + "-->"  );
         
     }
     /***
@@ -53,10 +52,10 @@ public class CC2cLinkedList1Implemenetation {//THIS CLASS SHOULD BE CALLED Linke
         Node current=head;//make current = head, start pointer current at head
         
         while(current.next != null){//iterate untill end of LinkedList
-            current.next = current;//if data already exists then go to next file
+            current.next = current;//make next pointer equal to current node, i.e go to next node in linked list
         }
         //after reaching first non null i.e end of LinkedList, create new node
-        current.next = new Node(data);  //make the next pointer value to null
+        current.next = new Node(data);  //make the next pointer value to the new data
     }
     /***
      *      APPEND TO START OF LINKEDLIST
@@ -92,6 +91,6 @@ public class CC2cLinkedList1Implemenetation {//THIS CLASS SHOULD BE CALLED Linke
         }
     }
     public static void main (String[] arg){
-        int testInt =10;int testInt2 = 20;int testInt3 = 39;append(testInt);append(testInt2);append(testInt3);print();
+        int testInt =10;int testInt2 = 20;int testInt3 = 30;append(testInt);append(testInt2);append(testInt3);print();
     }
 }
