@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JavaCTCI2LinkedList.newpackage;
+package JavaCTCI2.LinkedList;
 
 /**
  *
  * @author ilyas
  */
-public class CC2cLinkedList2CCQuestions {
+public class CC2cLinkedList3GeeksForGeeksQuestions {
     
 }
