@@ -58,8 +58,12 @@ public class CC2cLinkedList2CCQuestionss {
             }
             current = current.next;
         }
-        //1>1>2>3
-        
+    }
+    /***
+     *  CTCI Q2.1.b - remove duplicates in unsorted linkedlist NO BUFFER
+     */
+    public static void deleteDuplicatedNoBuffer(Node actualHead){
+        //xyz
     }
     public static void main(String[] arg){
         //create custom node, no encapsulation but will do fine for demonstration purposes
@@ -76,8 +80,5 @@ public class CC2cLinkedList2CCQuestionss {
         System.out.println("print 2nd");
         deleteDuplicated(start);
         print(start);
-        
-        
-        
     }
 }
