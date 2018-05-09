@@ -137,7 +137,7 @@ public class CC2cLinkedList2CCQuestionss {
         return pointer1;
         
     }
-     /***
+    /***
      *  CTCI Q2.3 - delete a node in the middle of a singly linked list, given only access to that node
      */
     public static boolean deleteMiddleNodeLimitedAccess(Node middleNode){
@@ -158,7 +158,63 @@ public class CC2cLinkedList2CCQuestionss {
         
         //NOTE DOES NOT DELETE LAST NODE, SHOULD CALL OTHER METHOD IF THAT NEEDS TO BE DONE
     }
-    //
+     /***
+     *  CTCI Q2.4 - Partition a linked list around a value x, such that all nodes less thanx
+     *              come before all nodes more than x
+     */
+    public static Node partitionStable(Node head, int x){//stable = x stays in place
+        //before list
+        Node beforeStart = null;
+        Node beforeEnd = null;
+        //after list
+        Node afterStart = null;
+        Node afterEnd = null;
+        
+        //Partition list
+        while(head !=null){ //ITERATE THROUGH LINKEDLIST 
+            Node next = head.next; //next of head is stored in temp, open up linkedlist
+            head.next = null; //head is pointed to null
+            
+            if(head.data<x){ //start with head, compare x value
+                
+                //insert node into end of before list
+                if(beforeStart==null){//add first thing to before start
+                    beforeStart = head; //equal current
+                    beforeEnd = beforeStart; //may only be one x
+                }else{//add to before start
+                    beforeEnd.next=head;
+                    beforeEnd=head;
+                }
+                
+            }else{//if more than x
+                
+                //INSERT NODE INTO END OF THE LIST
+                if(afterStart==null){
+                    //
+                    afterStart=head;
+                    afterEnd=afterStart;
+                }else{
+                    //
+                    afterEnd.next=head; // make end of 'after list' = current node
+                    afterEnd=head; //
+                }
+                
+                
+            }
+            head=head.next;
+        }
+        
+        if(beforeStart==null){
+            return afterStart;
+        }
+        
+        //MERGE, simple
+        beforeEnd.next=afterStart;
+        
+        //return beforeSent 
+        return beforeStart;
+    }
+    
     public static void main(String[] arg){
         //create custom node, no encapsulation but will do fine for demonstration purposes
         Node start = new Node(10);
@@ -176,7 +232,6 @@ public class CC2cLinkedList2CCQuestionss {
         iterativeKthtoLast(start, 2);
         
         //deleteDuplicatedNoBuffer(start);
-        
         print(start);
     }
 }
