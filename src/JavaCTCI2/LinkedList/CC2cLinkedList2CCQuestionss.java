@@ -7,6 +7,7 @@ package JavaCTCI2.LinkedList;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Stack;
 /**
  *
  * @author ilyas
@@ -163,6 +164,8 @@ public class CC2cLinkedList2CCQuestionss {
      *              come before all nodes more than x
      */
     public static Node partitionStable(Node head, int x){//stable = x stays in place
+        //NOTE *** head can be refactored to node for easier readability
+        
         //before list
         Node beforeStart = null;
         Node beforeEnd = null;
@@ -172,7 +175,8 @@ public class CC2cLinkedList2CCQuestionss {
         
         //Partition list
         while(head !=null){ //ITERATE THROUGH LINKEDLIST 
-            Node next = head.next; //next of head is stored in temp, open up linkedlist
+            Node next = head.next; //next kept in temp, used for iteration at the end of the while loop
+            
             head.next = null; //head is pointed to null
             
             if(head.data<x){ //start with head, compare x value
@@ -201,7 +205,7 @@ public class CC2cLinkedList2CCQuestionss {
                 
                 
             }
-            head=head.next;
+            head=next;
         }
         
         if(beforeStart==null){
@@ -213,6 +217,89 @@ public class CC2cLinkedList2CCQuestionss {
         
         //return beforeSent 
         return beforeStart;
+        
+        
+    }
+    /***
+     *  CTCI Q2.6 - Given a circularly LinkedList, return node at start of loop 
+     */
+    public static Node findStartOfLoop(Node head){
+        //check initial cases
+        if(head!=null || head.next!=null) return null;
+        
+        //runners
+        Node slow = head;
+        Node fast = head;
+        
+        ///check if circular
+        while(fast!=null && fast.next!=null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(fast==slow){
+                //Meet
+                break;
+            }
+        }
+        
+        //check if fast and slow met
+        if(fast!=slow || fast==null) return null;
+        
+        //if i move either slow or fast to head, they will both be an equal distance from the loop
+        fast = head;
+        if(fast!=head){
+            slow=slow.next;
+            fast=fast.next;
+        }
+        
+        return fast; //or return slow, they will both meet at the start of the loop
+        //proof is confusing, but makes sense
+    }
+    /***
+     *  CTCI Q2.7.a - Implement a method to check if a LinkedList is a palindrome
+     */
+    public static boolean isPalindromeIterative(Node head){
+        //error cases
+        if(head==null||head.next==null)return false;
+        
+        //runners
+        Node slow = head;
+        Node fast = head;
+        
+        //stack for first half of linkedlist
+        Stack<Integer> myStack = new Stack<Integer>();
+        
+        //race, slow 1x, fast 2x
+        while(fast!=null && fast.next!=null){
+            //add first half to stack
+            myStack.push(slow.data);
+            //race both
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        
+        //check if it was odd
+        if(fast!=null){
+            slow=slow.next;
+        }
+        
+        //compare rest of slow to stack
+        while(slow.next!=null){
+            int top = myStack.pop().intValue();
+            
+            if(top!=slow.data){
+                return false;
+            }
+            slow=slow.next;
+        }
+        
+        //if code reached here, all conditions have been met
+        return true;
+    }
+    /***
+     *  CTCI Q2.7.b - Implement a method to check if a LinkedList is a palindrome
+     */
+    public static boolean isPalindromeRecursive(){
+        return false;
     }
     
     public static void main(String[] arg){
