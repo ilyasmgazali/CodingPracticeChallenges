@@ -71,7 +71,7 @@ public class CC2cLinkedList1Implemenetation {//THIS CLASS SHOULD BE CALLED Linke
     /***
      *      DELETE WITH VALUE
      */
-    public static void deleteWithValue(int data){
+    public static void deleteWithValue(int data){ 
         //check if empty
         if(head == null){return;}
         //check if value to be deleted is head
