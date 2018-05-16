@@ -154,6 +154,18 @@ public class CC4StacksAndQueuesQuestionsNEW {
             return indexOfCurrentStack; 
         }
     }
+    //4 recursion, need to look up recursion
+    
+    //5 after 
+    
+    //6
+    public static class Stack5{
+        //variables
+        
+        
+        
+        //methods
+    }
     
     public static void main(String[] args){
         // ******************************** Q1 *********************
