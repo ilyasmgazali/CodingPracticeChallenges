@@ -86,8 +86,6 @@ public class CC9RecursionImplementation {
             return (n*(n-1))/2;
     }
     
-    
-    
     //EXPERIMENTAL, MOVE ON
     //program for length of a string using recursion
     //input: str = "abcd"
@@ -110,16 +108,14 @@ public class CC9RecursionImplementation {
     //add number + number before it
     public static int sumRec(int n){ 
         //break condition
-        if(n==0)//
+        if(n==1)//
             return 1;
         else
             return n + sumRec(n-1);
+        
             // ADD NUMBER + ONE BEFORE THE NUMBER 
             // N + RETURN VALUE
     }
-    
-    
-    
     
     public static void main(String[] args){
         //FACT
@@ -133,5 +129,9 @@ public class CC9RecursionImplementation {
         
         //TRIANGLE NUMBER
         System.out.println("TriReC:" + triRec(6));
+        
+        //SUM
+        System.out.println("");
+        System.out.println("Sum: " + sumRec(1));
     }    
 }
