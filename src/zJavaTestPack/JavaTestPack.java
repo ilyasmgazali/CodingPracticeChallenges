@@ -10,5 +10,5 @@ package zJavaTestPack;
  * @author ilyas
  */
 public class JavaTestPack {
-
+    //
 }
