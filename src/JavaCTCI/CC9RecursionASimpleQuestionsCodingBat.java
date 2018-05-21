@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package JavaCTCI;
 
 /**
@@ -22,27 +23,38 @@ public class CC9RecursionASimpleQuestionsCodingBat {
         return n * factorial(n-1);
     }
     /**
-    The fibonacci sequence is a famous bit of mathematics, and it happens to have a recursive definition. The first two values in the sequence are 0 and 1 (essentially 2 base cases). Each subsequent value is the sum of the previous two values, so the whole sequence is: 0, 1, 1, 2, 3, 5, 8, 13, 21 and so on. Define a recursive fibonacci(n) method that returns the nth fibonacci number, with n=0 representing the start of the sequence.
+    The fibonacci sequence is a famous bit of mathematics, and it happens to have a recursive definition. 
+    The first two values in the sequence are 0 and 1 (essentially 2 base cases). 
+    Each subsequent value is the sum of the previous two values, so the whole sequence is:
+    0, 1, 1, 2, 3, 5, 8, 13, 21 and so on. Define a recursive fibonacci(n) 
+    method that returns the nth fibonacci number, with n=0 representing the start of the sequence.
 
 
     fibonacci(0) → 0
     fibonacci(1) → 1
     fibonacci(2) → 1
      */
-    public int fib(int n){
-        if(n==0)
+    public static int fib(int n){
+        if(n<0)
+        { 
+            System.out.println("return 0");
             return 0;
+        }
         if(n==1)
+        {
+            System.out.println("return 1");
             return 1;
+        }
         else
-            return fib(n-1) + fib(n-2);
+        {
+            System.out.println("n=  " + n);
+            return fib(n-1) + fib(n-2)+ fib(n-3);
+        }
     }
-    
-    
-
     /**
      * 
-    We have a number of bunnies and each bunny has two big floppy ears. We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
+    We have a number of bunnies and each bunny has two big floppy ears. 
+    We want to compute the total number of ears across all the bunnies recursively (without loops or multiplication).
 
 
     bunnyEars(0) → 0
@@ -112,12 +124,22 @@ public class CC9RecursionASimpleQuestionsCodingBat {
       if(n==0)
         return sum;
       else
-        //first add right most digit, then remove right most digit   
+        //first add right most digit, then remove right most digit  
+          
         //ADD right most digit
-        sum= sum + (n % 10); //recursive variable to keep the digitSum
+        sum = sum + (n % 10); //recursive variable to keep the digitSum
         //REMOVE right most digit
         n = n / 10;
         return sumDigits(n,sum);///returning sum to print it
+    }
+    public static int sumDigits(int num ){
+        if(num<=9)
+            return num;
+        else
+            return (num%10) + sumDigits(num/10);  //most right digit + removing last digit
+        
+        //NOTE: THIS IS RECURSION THROUGH THE DIGITS, E.G 10 DIGIT WILL RECUR 10 TIMES. 
+        //NOTE: IT DOES RECCUR THROUGH AMOUNT OF N'S
     }
     
     
@@ -277,7 +299,6 @@ public class CC9RecursionASimpleQuestionsCodingBat {
     /**
     Given a string, compute recursively a new string where all the 'x' chars have been removed.
 
-
     noX("xaxb") → "ab"
     noX("abc") → "abc"
     noX("xx") → ""
@@ -296,13 +317,29 @@ public class CC9RecursionASimpleQuestionsCodingBat {
           return str.charAt(0) + noX(str.substring(1) );
         }
     }
+    
+    
+    //NOT AS DIFFICULT
+    //random youtube tutorial
+    //get the 5th digit always
+    public static int only5thDigit(int digit){
+        //
+        if(digit<=99999) //not this is digit number
+            return digit%10; 
+        else
+            return only5thDigit(digit/10);  
+    }
+    
 
     
     //Some Tests are already complete in browser 
     public static void main(String[] args) {
+        System.out.println("Fib:    "+ fib(5)   );
         System.out.println("Sum of Digits   :"+sumDigits(126,0));
         System.out.println("Count 7         :"+count7(7727,0)); //can be done with 1 input
         System.out.println("Count Double    :"+countDouble8(88989,0)); //can be done with 1 input (DIFFERENT SOLUTION ON GoogleSearch)
         System.out.println("Base Powers     :"+powerN(10,3)  );
+        System.out.println("5th Digit   "+ only5thDigit(123456));
+        
     }
 }
