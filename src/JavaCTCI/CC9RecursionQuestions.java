@@ -87,8 +87,6 @@ public class CC9RecursionQuestions {
         return magicIndexDuplicates(arr, 0, arr.length-1);
     }
     
-    
-    
     //main driver class
     public static void main(String[] args){
         //Q1
@@ -98,6 +96,7 @@ public class CC9RecursionQuestions {
         //Q3
         //int[] myInt = {-2,-1,0,1,4,10,11,22,33,44,55,66};System.out.println(""+magicIndexCaller(myInt) );
         //3B
+        System.out.println("++"+   (     (6+8)   /2)    );
         int arr[] = { -11, -10, -5, 3, 3, 3, 3, 4, 7, 9, 12, 13 };
         int arr2[] = {-10, 5, 2, 2, 2, 3, 4, 7, 9, 12 , 13};
         System.out.println("3B: "+magicIndexDuplicatesCaller(arr2) );
