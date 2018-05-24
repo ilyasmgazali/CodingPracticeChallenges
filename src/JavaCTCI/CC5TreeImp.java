@@ -9,7 +9,7 @@ package JavaCTCI;
  *
  * @author ilyas
  */
-public class CC5Tree {
+public class CC5TreeImp {
     //not inner class can be static in java
     public static class BinaryTree{
         public static class Node{
@@ -49,6 +49,9 @@ public class CC5Tree {
             //                     4  5  null null
             //                   /\  /\
             //              null null null null
+            //PRE-ORDER:  1 2 4 5 3
+            //IN-ORDER:   4 2 5 1 3 
+            //POST-ORDER: 4 5 2 3 1
         }
         //traversals
 
@@ -77,7 +80,7 @@ public class CC5Tree {
         }
         
         /**
-         * norder Traversal:
+         * Inorder Traversal:
 
         Algorithm Inorder(tree)
            1. Traverse the left subtree, i.e., call Inorder(left-subtree)
@@ -87,5 +90,44 @@ public class CC5Tree {
         /* Given a binary tree, print its nodes in preorder*/
         //PRINT IN-ORDER: 4 2 5 1 3
         //@Node node - root
+        /* Given a binary tree, print its nodes in inorder*/
+        void printInorder(Node node){
+            if (node == null)
+                return;
+
+            /* first recur on left child */
+            printInorder(node.left);
+
+            /* then print the data of node */
+            System.out.print(node.key + " ");
+
+            /* now recur on right child */
+            printInorder(node.right);
+        }
+        /**
+        Postorder Traversal:
+
+        Algorithm Postorder(tree)
+           1. Traverse the left subtree, i.e., call Postorder(left-subtree)
+           2. Traverse the right subtree, i.e., call Postorder(right-subtree)
+           3. Visit the root.
+         * @param node 
+         */
+        /* Given a binary tree, print its nodes according to the
+          "bottom-up" postorder traversal. */
+        //POST ORDER: 4 5 2 3 1
+        void printPostorder(Node node){
+            if (node == null)
+                return;
+
+            // first recur on left subtree
+            printPostorder(node.left);
+
+            // then recur on right subtree
+            printPostorder(node.right);
+
+            // now deal with the node
+            System.out.print(node.key + " ");
+        }
     }
 }
