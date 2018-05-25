@@ -126,7 +126,7 @@ public class CC5TreeImp {
             // then recur on right subtree
             printPostorder(node.right);
 
-            // now deal with the node
+            // now deal with the node OR LOGIC
             System.out.print(node.key + " ");
         }
     }
