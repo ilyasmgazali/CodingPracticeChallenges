@@ -51,30 +51,24 @@ public class CC2bStringsV2NEW {
      *  First answer
      *  https://www.geeksforgeeks.org/determine-string-unique-characters/
      */
-    public static boolean uniqueCheck(String methodString){
-        //create array of boolean, set to false as default
-        boolean[] check = new boolean[256]; 
-        // create array of methodString chars to loop through
-        char[] myCharArray = methodString.toCharArray();
-        //loop through char array
-        for(int i=0; i<myCharArray.length;i++){
-            //write code to turn them true, if already true, then you have duplicate
-            
-            //should be that the below two lines are used to get ASCII number of character
-            //they should also be used in the check, but i java did it for me
-            //int ASCII = (int)myCharArray[i]; ////////////////////// MISSED THIS LINE BUT IT STILL WORKED
-            //if (    check[ASCII]    )... this character is returned as ascii 
-            
-            if(check[   myCharArray[i]  ] == true){
-                //it is already true
-                return true;
+    public static boolean uniqueCheck(String inputString){
+        if(inputString.length() > 256){return false;} //test case. impossible to be unique
+        
+        //use boolean to check status of array (extra data structure
+        boolean[] statusArray = new boolean[256];
+        
+        //traverse through string using charAt(int index)
+        for(int i=0;i<inputString.length()  ;i++){ 
+            if(statusArray[  inputString.charAt(i)   ]==true){
+                //already exists. should never run
+                return false; 
             }else{
-                //make it true
-                check[ myCharArray[i] ] = true;
-            }
+                //does not exist
+                statusArray[i]=true;
+            }    
         }
-        return false;
-    }
+        return true;
+    }   
     /*
     *   Chapter 1 Question 1 - String - Unique characters
         SECOND ANSWER

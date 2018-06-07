@@ -10,5 +10,9 @@ package zJavaTestPack;
  * @author ilyas
  */
 public class JavaTestPack {
-    //
+    public static void main (String[] args){
+        // Method 1
+        
+    }
+
 }
