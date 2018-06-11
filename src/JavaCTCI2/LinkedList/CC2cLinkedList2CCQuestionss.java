@@ -91,14 +91,34 @@ public class CC2cLinkedList2CCQuestionss {
      * @param k - kth to last element
      */
     //2a - RECURSIVE
-    public static void simpleKthtoLast(Node head, int k){
+    
+    //recursive call as below
+    public static int simpleKthtoLast(Node head, int k){
         //RECURSIVE COME BACK TO THIS
+        if(head==null) {return 0;}
+        
+        
+        int i = simpleKthtoLast(head.next, k) + 1;
+        
+        if(i==k){ //success case
+            System.out.println(head.data); //can just bring whole data if i wanted to
+        }
+        return i;   
     }
+    
+    
     /***
-     *  CTCI Q2.2.b- Find Kth to last element in a singularly linked list - RECURSIVE WRAPPER
+     *  CTCI Q2.2.b- Find Kth to last element in a singularly linked list - RECURSIVE, improved with WRAPPER
+     *  In order to return a NODE rather than an int, or print as above
      */
-    public static void wrapperKthtoLast(){
-        //RECURSIVE COME BACK TO THIS
+    
+    public static void recursive2KthtoLast(){
+        //RECURSIVE WITH BELOW
+    }
+    public static class IntWrapper{
+        //RECURSIVE WITH ABOVE
+        
+        
     }
     
     //GEEKS FOR GEEKS - static int solution
@@ -163,7 +183,7 @@ public class CC2cLinkedList2CCQuestionss {
      *  CTCI Q2.4 - Partition a linked list around a value x, such that all nodes less thanx
      *              come before all nodes more than x
      */
-    public static Node partitionStable(Node head, int x){//stable = x stays in place
+    public static Node partitionStable(Node inputNode, int x){//stable = x stays in place
         //NOTE *** head can be refactored to node for easier readability
         
         //before list
@@ -174,40 +194,38 @@ public class CC2cLinkedList2CCQuestionss {
         Node afterEnd = null;
         
         //Partition list
-        while(head !=null){ //ITERATE THROUGH LINKEDLIST 
-            Node next = head.next; //next kept in temp, used for iteration at the end of the while loop
+        while(inputNode !=null){ //ITERATE THROUGH LINKEDLIST 
+            Node nextNode = inputNode.next; //next kept in temp, used for iteration at the end of the while loop
             
-            head.next = null; //head is pointed to null
+            inputNode.next = null; //head is pointed to null, opened up
             
-            if(head.data<x){ //start with head, compare x value
+            if(inputNode.data<x){ //start with head, compare x value
                 
                 //insert node into end of before list
                 if(beforeStart==null){//add first thing to before start
-                    beforeStart = head; //equal current
-                    beforeEnd = beforeStart; //may only be one x
+                    beforeStart = inputNode; //equal current
+                    beforeEnd = beforeStart; //may only be one 
                 }else{//add to before start
-                    beforeEnd.next=head;
-                    beforeEnd=head;
+                    beforeEnd.next=inputNode;
+                    beforeEnd=inputNode;
                 }
-                
-            }else{//if more than x
+            }else{//if more than x or equal
                 
                 //INSERT NODE INTO END OF THE LIST
                 if(afterStart==null){
                     //
-                    afterStart=head;
+                    afterStart=inputNode;
                     afterEnd=afterStart;
                 }else{
                     //
-                    afterEnd.next=head; // make end of 'after list' = current node
-                    afterEnd=head; //
+                    afterEnd.next=inputNode; // make end of 'after list' = current node
+                    afterEnd=inputNode; //
                 }
-                
-                
             }
-            head=next;
+            inputNode=nextNode; //use above temp node
         }
         
+        //no value before x
         if(beforeStart==null){
             return afterStart;
         }
@@ -217,8 +235,6 @@ public class CC2cLinkedList2CCQuestionss {
         
         //return beforeSent 
         return beforeStart;
-        
-        
     }
     /***
      *  CTCI Q2.6 - Given a circularly LinkedList, return node at start of loop 
@@ -244,7 +260,7 @@ public class CC2cLinkedList2CCQuestionss {
         //check if fast and slow met
         if(fast!=slow || fast==null) return null;
         
-        //if i move either slow or fast to head, they will both be an equal distance from the loop
+        //if i move either slow or fast to head, they WILL both be an equal distance from the LOOP START
         fast = head;
         if(fast!=head){
             slow=slow.next;
@@ -272,12 +288,13 @@ public class CC2cLinkedList2CCQuestionss {
         while(fast!=null && fast.next!=null){
             //add first half to stack
             myStack.push(slow.data);
+            
             //race both
             slow=slow.next;
             fast=fast.next.next;
         }
         
-        //check if it was odd
+        // has odd number of cases, so skip middle case
         if(fast!=null){
             slow=slow.next;
         }
@@ -289,7 +306,7 @@ public class CC2cLinkedList2CCQuestionss {
             if(top!=slow.data){
                 return false;
             }
-            slow=slow.next;
+            slow=slow.next;//iterate
         }
         
         //if code reached here, all conditions have been met
@@ -310,15 +327,20 @@ public class CC2cLinkedList2CCQuestionss {
         start.next.next.next = new Node(10);
         start.next.next.next.next = new Node(10);
         //first set of prints
-        System.out.println("print first");
-        print(start);
-        System.out.println();
+        //System.out.println("print first");
+        //print(start);
+        //System.out.println();
         //second set of prints
-        System.out.println("print 2nd");
+        //System.out.println("print 2nd");
         //deleteDuplicated(start);
-        iterativeKthtoLast(start, 2);
+        //iterativeKthtoLast(start, 2);
+        
+        //print(partitionStable(start, 12))   ;
         
         //deleteDuplicatedNoBuffer(start);
-        print(start);
+    //    print(start);
+    
+    
+        int i = simpleKthtoLast(start, 3);
     }
 }
